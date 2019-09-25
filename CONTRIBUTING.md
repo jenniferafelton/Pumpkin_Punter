@@ -11,10 +11,13 @@ to ensure that we are accepting submissions (most likely fine).
 
 ## Our Standards
 
-*   One True Brace format.(Open brackets are NOT on their own line)
-*   Gracefully accepting constructive criticism
-*   If project is a Unity one, please be sure you use the projects current version.
+* One True Brace format.(Open brackets are NOT on their own line)
+* Gracefully accepting constructive criticism
+* If project is a Unity one, please be sure you use the projects current version.
+
+## Unity Specific Projects
+* Create Test Scenes of your own. You can duplicate another scene & test in there.
 
 ### Our Responsibilities
 
-*   Replying to PRs within a few days
+* Replying to PRs within a few days
