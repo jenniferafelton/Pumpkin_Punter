@@ -48,4 +48,4 @@ MonoBehaviour:
   creationHeight: 5
   positionSpan: 4.5
   count: 1000
-  perFrame: 100
+  perFrame: 25
