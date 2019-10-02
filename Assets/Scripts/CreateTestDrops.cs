@@ -16,7 +16,7 @@ public class CreateTestDrops : MonoBehaviour {
     private int count = 1000;
 
     [SerializeField]
-    private int perFrame = 100;
+    private int perFrame = 25;
 
     private void OnEnable() {
         StartCoroutine(CreateDrops());
@@ -36,7 +36,7 @@ public class CreateTestDrops : MonoBehaviour {
             go.GetComponent<Renderer>().material.SetColor("_Color", RandomColor());
             go.GetComponent<Renderer>().material.SetColor("_EmissionColor", RandomColor());
 
-            if (i % 100 == 0) {
+            if (i % perFrame == 0) {
                 yield return pause;
             }
         }
