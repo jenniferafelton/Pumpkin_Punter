@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3423021123006982786}
   - component: {fileID: 9098958262833169001}
   - component: {fileID: 54196525409767064}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Drop_Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
