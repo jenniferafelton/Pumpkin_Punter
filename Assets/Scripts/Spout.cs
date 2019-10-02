@@ -21,8 +21,8 @@ public class Spout : MonoBehaviour {
     private void Spray() {
         GameObject go = Instantiate(dropPrefab, spawnPoint.position, Quaternion.identity);
 
-        go.GetComponent<Renderer>().material.SetColor("_Color", RandColor());
-        go.GetComponent<Renderer>().material.SetColor("_EmissionColor", RandColor());
+        go.GetComponent<Renderer>().material.SetColor("_Color", new Color().Random());
+        go.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color().Random());
 
         go.GetComponent<Rigidbody>().velocity = (transform.up * spoutPower) + RandDirection();
     }
@@ -32,15 +32,6 @@ public class Spout : MonoBehaviour {
             UnityEngine.Random.Range(-dirRandomness, dirRandomness),
             0,
             UnityEngine.Random.Range(-dirRandomness, dirRandomness)
-        );
-    }
-
-    private Color RandColor() {
-        return new Color(
-            UnityEngine.Random.value,
-            UnityEngine.Random.value,
-            UnityEngine.Random.value,
-            UnityEngine.Random.value
         );
     }
 }
