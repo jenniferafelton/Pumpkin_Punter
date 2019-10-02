@@ -14,7 +14,7 @@ public class GroundExplosion : MonoBehaviour {
     private Camera mainCamera;
     private LayerMask groundLayer;
     private LayerMask dropsLayer;
-    private float blastForceMultiplier = 100.0f;
+    private readonly float blastForceMultiplier = 100.0f;
 
     private void Start() {
         mainCamera = Camera.main;
@@ -29,14 +29,18 @@ public class GroundExplosion : MonoBehaviour {
     }
 
     private void CheckForGroundClick() {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit groundHit, 100.0f, groundLayer)) {
-            Collider[] hits = Physics.OverlapSphere(groundHit.point, blastArea, dropsLayer);
-            foreach (Collider hit in hits) {
-                hit.gameObject
-                    .GetComponent<Rigidbody>()
-                    .AddExplosionForce(TotalBlastForce(), groundHit.point, blastArea, blastUpwardMod);
-            }
+            Explode(groundHit.point);
+        }
+    }
+
+    private void Explode(Vector3 targetPos) {
+        Collider[] hits = Physics.OverlapSphere(targetPos, blastArea, dropsLayer);
+        foreach (Collider hit in hits) {
+            hit.gameObject
+                .GetComponent<Rigidbody>()
+                .AddExplosionForce(TotalBlastForce(), targetPos, blastArea, blastUpwardMod);
         }
     }
 
