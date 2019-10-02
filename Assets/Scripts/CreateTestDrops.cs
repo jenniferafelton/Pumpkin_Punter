@@ -7,9 +7,6 @@ public class CreateTestDrops : MonoBehaviour {
     private GameObject dropPrefab;
 
     [SerializeField]
-    private Transform dropContainer;
-
-    [SerializeField]
     private float creationHeight = 5.0f;
 
     [SerializeField]
@@ -20,19 +17,6 @@ public class CreateTestDrops : MonoBehaviour {
 
     [SerializeField]
     private int perFrame = 100;
-
-    
-
-    private void Awake() {
-        if (dropContainer == null) {
-            dropContainer = transform;
-        }
-
-        if (dropContainer.gameObject.GetComponent<ShowChildCount>() == null) {
-            dropContainer.gameObject.AddComponent<ShowChildCount>();
-        }
-
-    }
 
     private void OnEnable() {
         StartCoroutine(CreateDrops());
@@ -46,14 +30,23 @@ public class CreateTestDrops : MonoBehaviour {
                 creationHeight,
                 Random.Range(-positionSpan, positionSpan));
 
-            GameObject go = Instantiate(dropPrefab, ranPos, Quaternion.identity, dropContainer);
+            GameObject go = Instantiate(dropPrefab, ranPos, Quaternion.identity, transform);
+            gameObject.name = $"TestDrops ({transform.childCount})";
 
-            go.GetComponent<Renderer>().material.SetColor("_Color", new Color().Random());
-            go.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color().Random());
+            go.GetComponent<Renderer>().material.SetColor("_Color", RandomColor());
+            go.GetComponent<Renderer>().material.SetColor("_EmissionColor", RandomColor());
 
             if (i % 100 == 0) {
                 yield return pause;
             }
         }
+    }
+
+    private Color RandomColor() {
+        return new Color(
+            Random.value,
+            Random.value,
+            Random.value
+        );
     }
 }
