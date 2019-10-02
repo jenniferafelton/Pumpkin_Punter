@@ -341,7 +341,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.078431375, g: 0, b: 0.19607843, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -454,6 +454,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 910341317759584687, guid: d234469b8eb4538438a97746ec20131f,
+        type: 3}
+      propertyPath: dropPrefab
+      value: 
+      objectReference: {fileID: 1011918875229026, guid: c5fec8b4fedf6804bad76e85cd41cc95,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d234469b8eb4538438a97746ec20131f, type: 3}
 --- !u!1 &665056518
