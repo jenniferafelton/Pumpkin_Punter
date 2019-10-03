@@ -11,6 +11,16 @@ public class Spout : MonoBehaviour {
     private float spoutPower = 5.0f;
     [SerializeField]
     private float dirRandomness = 5.0f;
+    [SerializeField]
+    private Transform dropContainer;
+
+    private void Start() {
+        if (dropContainer == null) {
+            GameObject go = new GameObject("Drops");
+            go.AddComponent<ShowChildCount>();
+            dropContainer = go.transform;
+        }
+    }
 
     private void Update() {
         if (Input.GetKey(sprayKey)) {
@@ -19,7 +29,7 @@ public class Spout : MonoBehaviour {
     }
 
     private void Spray() {
-        GameObject go = Instantiate(dropPrefab, spawnPoint.position, Quaternion.identity);
+        GameObject go = Instantiate(dropPrefab, spawnPoint.position, Quaternion.identity, dropContainer);
 
         go.GetComponent<Renderer>().material.SetColor("_Color", new Color().Random());
         go.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color().Random());
