@@ -1,5 +1,5 @@
 title: Pumpkin Punter # your name (or website title) here
-logo: "/images/pp1.JPG/" # your photo (or logo) here
+logo: "/images/pp1.JPG"/ # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
 
 theme: jekyll-theme-minimal
