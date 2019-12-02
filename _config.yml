@@ -1,12 +1,5 @@
-title: Jennifer Felton # your name (or website title) here
+title: Pumpkin Punter # your name (or website title) here
 logo: "/images/pcircle.png" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  Computer Science student at Cal State Fullerton open for internships for summer 2020. Expected graduation Spring of 2021. 
-  <br><br>
-  Interested in game design, AI and databases.
-  <br><br>
-  <a href="https://www.linkedin.com/in/jenniferafelton/">View My LinkedIn Profile</a> 
-  <br><br>
-  <a href="https://www.instagram.com/justlittleoldmejenn">View My Blog</a>
-  <br>
+  
 theme: jekyll-theme-minimal
